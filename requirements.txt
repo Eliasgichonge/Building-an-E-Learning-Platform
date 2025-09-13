@@ -1,4 +1,7 @@
-asgiref==3.5.2
-Django~=4.1.0
-Pillow==9.2.0
-sqlparse==0.4.2
+asgiref==3.5.2: Released on May 16, 2022
+
+Django~=4.1.0: Released on August 3, 2022
+
+Pillow==9.2.0: Released on July 1, 2022
+
+sqlparse==0.4.2: Released on September 10, 2021
