@@ -1,28 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}My courses{% endblock %}
+{% block title %}Delete course{% endblock %}
 
 {% block content %}
-  <h1>My courses</h1>
+  <h1>Delete course "{{ object.title }}"</h1>
   <div class="module">
-    {% for course in object_list %}
-      <div class="course-info">
-        <h3>{{ course.title }}</h3>
-        <p>
-          <a href="{% url "course_edit" course.id %}">Edit</a>
-          <a href="{% url "course_delete" course.id %}">Delete</a>
-          <a href="{% url "course_module_update" course.id %}">Edit modules</a>
-          {% if course.modules.count > 0 %}
-            <a href="{% url "module_content_list" course.modules.first.id %}">
-            Manage contents</a>
-          {% endif %}
-        </p>
-      </div>
-    {% empty %}
-      <p>You haven't created any courses yet.</p>
-    {% endfor %}
-    <p>
-      <a href="{% url "course_create" %}" class="button">Create new course</a>
-    </p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <p>Are you sure you want to delete "{{ object }}"?</p>
+      <input type="submit" value="Confirm">
+    </form>
   </div>
 {% endblock %}
