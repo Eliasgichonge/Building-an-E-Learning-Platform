@@ -8,6 +8,6 @@ urlpatterns = [
     path('<pk>/delete/', views.CourseDeleteView.as_view(), name='course_delete'),
 
     # NEW: module management URLs
-    path('<pk>/modules/edit/', views.CourseModuleUpdateView.as_view(), name='course_module_update'),
-    path('module/<pk>/contents/', views.ModuleContentListView.as_view(), name='module_content_list'),
+    path('<pk>/modules/edit/', views.CourseUpdateView.as_view(), name='course_module_update'),
+    path('module/<pk>/contents/', views.ContentListView.as_view(), name='module_content_list'),
 ]
